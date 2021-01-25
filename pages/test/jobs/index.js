@@ -40,16 +40,16 @@ export default function Jobs(props) {
     //Currently I have not provided option to update number of jobs showing but it can be done easily
     const [jobLimit, setJobLimit] = useState(10);
     //Using state to store active filter
-    const [pastSevenDaysFilterActive, setPastSevenDaysFilterActive] = useState(false);
+    const [pastWeekFilterActive, setPastWeekFilterActive] = useState(false);
     const [companyNameFilterActive, setCompanyNameFilterActive] = useState (false);
 
     /*
     * This method fetch past 7 days job
     */
-    function getPastSevenDaysJob() {
+    function getPastWeekJob() {
 
         //Updating past seven days filter state
-        setPastSevenDaysFilterActive(true);
+        setPastWeekFilterActive(true);
         //showing loading screen
         updateLoading(true);
 
@@ -65,7 +65,7 @@ export default function Jobs(props) {
     */
     function clearAppliedFilter(){
         //Updating all filter state
-        setPastSevenDaysFilterActive(false);
+        setPastWeekFilterActive(false);
         setCompanyNameFilterActive(false);
         setMyJobs(props.jobList.jobs);
     }
@@ -77,7 +77,7 @@ export default function Jobs(props) {
             </div>
             <hr />
             <div className="container">
-                <button type="button" title="Past 7 days jobs" className={`btn ${pastSevenDaysFilterActive ? "btn-primary" : "btn-secondary"}`} onClick={getPastSevenDaysJob}>Past 7 days</button>
+                <button type="button" title="Past week jobs" className={`btn ${pastWeekFilterActive ? "btn-primary" : "btn-secondary"}`} onClick={getPastWeekJob}>Past Week</button>
                 <button type="button" title="Company name" className={`btn ml-1 ${companyNameFilterActive ? "btn-primary" : "btn-secondary"}`} >Company Name</button>
                 <button type="button" title="Clear filter" className="btn btn-primary ml-1"  onClick={clearAppliedFilter}>Clear</button>
             </div>

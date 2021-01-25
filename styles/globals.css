@@ -67,9 +67,11 @@ Job card component css
 }
 .cut-text { 
   text-overflow: ellipsis;
-  overflow: hidden; 
+  overflow: hidden;
 }
-
+.desc-height{
+  max-height: 5rem;
+}
 /*
 Job list component css
 */

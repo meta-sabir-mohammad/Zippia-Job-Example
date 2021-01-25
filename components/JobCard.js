@@ -7,12 +7,12 @@ export default function JobCard(props) {
             <div className="company-name h-10">
                 {props.job.companyName}
             </div>
-            <div className="job-title h-25">
+            <div className="job-title h-25 cut-text">
                 {props.job.jobTitle}
             </div>
-            <div className="cut-text">
+            <div>
                 <hr />
-                <p className="short-desc">
+                <p className="short-desc cut-text desc-height">
                     {props.job.shortDesc}
                 </p>
             </div>
